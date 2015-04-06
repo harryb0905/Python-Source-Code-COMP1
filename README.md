@@ -2,10 +2,15 @@
 This repository contains the 2015 Python Source Code for Capture The Sarrum
 
 1.1 Give an option to exit game
+
 1.2 Skill trees and levelling up
+
 1.3 Add more options to menu
+
 1.4 Give user option to randomly place pieces onto board
+
 1.5 Promote Marzaz pani to Kashshaptu when it reaches home rank
+
 1.6 Prevent pieces from moving backwards
 1.7 Add new piece that behaves like knight in chess
 1.8 Allow Sarrum and Gisgigir to castle (as with king and rook in chess)
