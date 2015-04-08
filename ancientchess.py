@@ -19,9 +19,12 @@ def DisplayWhoseTurnItIs(WhoseTurn):
   else:
     print("It is Black's turn")
 
+
+
 def GetTypeOfGame():
-  TypeOfGame = input("Do you want to play the sample game (enter Y for Yes)? ")
+  TypeOfGame = input("Do you want to play the sample game (enter Y for Yes)")
   return TypeOfGame
+
 
 def DisplayWinner(WhoseTurn):
   if WhoseTurn == "W":
@@ -184,12 +187,22 @@ def InitialiseBoard(Board, SampleGame):
           elif FileNo == 5:
             Board[RankNo][FileNo] = Board[RankNo][FileNo] + "S"
         else:
-          Board[RankNo][FileNo] = "  "    
+          Board[RankNo][FileNo] = "  "
+
+
+#
                     
 def GetMove(StartSquare, FinishSquare):
+  quitgame = input("Type 'q' to quit (Press enter to continue)")
+  if quitgame == 'q':
+    print("You have exited the game.")
+    quit()
   StartSquare = int(input("Enter coordinates of square containing piece to move (file first): "))
   FinishSquare = int(input("Enter coordinates of square to move piece to (file first): "))
-  return StartSquare, FinishSquare
+  return quitgame, StartSquare, FinishSquare
+
+#
+
 
 def MakeMove(Board, StartRank, StartFile, FinishRank, FinishFile, WhoseTurn):
   if WhoseTurn == "W" and FinishRank == 1 and Board[StartRank][StartFile][1] == "R":
@@ -201,8 +214,7 @@ def MakeMove(Board, StartRank, StartFile, FinishRank, FinishFile, WhoseTurn):
   else:
     Board[FinishRank][FinishFile] = Board[StartRank][StartFile]
     Board[StartRank][StartFile] = "  "
-
-    
+   
 if __name__ == "__main__":
   Board = CreateBoard() #0th index not used
   StartSquare = 0 
@@ -211,7 +223,7 @@ if __name__ == "__main__":
   while PlayAgain == "Y":
     WhoseTurn = "W"
     GameOver = False
-    SampleGame = input("Do you want to play the sample game (enter Y for Yes)? ")
+    SampleGame = input("Do you want to play the sample game (enter Y for Yes)")
     if ord(SampleGame) >= 97 and ord(SampleGame) <= 122:
       SampleGame = chr(ord(SampleGame) - 32)
     InitialiseBoard(Board, SampleGame)
