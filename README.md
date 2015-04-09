@@ -1,15 +1,15 @@
 
 This repository contains the 2015 Python Source Code for Capture The Sarrum
 
-1.1 Give an option to exit game
+1.1 Give an option to exit game X
 
 1.2 Skill trees and levelling up
 
-1.3 Add more options to menu
+1.3 Add more options to menu X
 
-1.4 Give user option to randomly place pieces onto board
+1.4 Give user option to randomly place pieces onto board X (almost)
 
-1.5 Promote Marzaz pani to Kashshaptu when it reaches home rank
+1.5 Promote Marzaz pani to Kashshaptu when it reaches home rank (go through next lesson)
 
 1.6 Prevent pieces from moving backwards
 
@@ -19,7 +19,7 @@ This repository contains the 2015 Python Source Code for Capture The Sarrum
 
 1.9 Track number of moves
 
-1.10 Allow the player to save the game
+1.10 Allow the player to save the game X
 
 1.11 Prevent program from crashing, when entering incorrect coordinates
 
