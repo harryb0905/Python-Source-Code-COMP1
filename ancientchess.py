@@ -151,6 +151,9 @@ def CheckMoveIsLegal(Board, StartRank, StartFile, FinishRank, FinishFile, WhoseT
         MoveIsLegal = CheckEtluMoveIsLegal(Board, StartRank, StartFile, FinishRank, FinishFile)
   return MoveIsLegal
 
+
+
+
 def InitialiseBoard(Board, SampleGame):
   if SampleGame == "Y":
     for RankNo in range(1, BOARDDIMENSION + 1):
@@ -189,19 +192,11 @@ def InitialiseBoard(Board, SampleGame):
         else:
           Board[RankNo][FileNo] = "  "
 
-
-#
                     
 def GetMove(StartSquare, FinishSquare):
-  quitgame = input("Type 'q' to quit (Press enter to continue)")
-  if quitgame == 'q':
-    print("You have exited the game.")
-    quit()
   StartSquare = int(input("Enter coordinates of square containing piece to move (file first): "))
   FinishSquare = int(input("Enter coordinates of square to move piece to (file first): "))
   return StartSquare, FinishSquare
-
-#
 
 
 def MakeMove(Board, StartRank, StartFile, FinishRank, FinishFile, WhoseTurn):
@@ -214,13 +209,32 @@ def MakeMove(Board, StartRank, StartFile, FinishRank, FinishFile, WhoseTurn):
   else:
     Board[FinishRank][FinishFile] = Board[StartRank][StartFile]
     Board[StartRank][StartFile] = "  "
-   
+
+#
+
+def SaveGame(Board):
+  f = open("savegame.txt","w")
+  f.write(Board)
+  for line in f:
+    print (line)
+
+def LoadGame():
+  f = open("savegame.txt","r")
+  Board = f.read()
+  f.close()
+  return Board
+#
+
+
 if __name__ == "__main__":
   Board = CreateBoard() #0th index not used
   StartSquare = 0 
   FinishSquare = 0
   PlayAgain = "Y"
   while PlayAgain == "Y":
+    load_game = input("Do you want to load a game? (y/n)")
+    if load_game == 'y':
+      Board = LoadGame
     WhoseTurn = "W"
     GameOver = False
     SampleGame = input("Do you want to play the sample game (enter Y for Yes)")
