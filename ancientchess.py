@@ -190,18 +190,40 @@ def InitialiseBoard(Board, SampleGame):
           Board[RankNo][FileNo] = "  "
 
 
+
 #
+
+def PlacePiece(Board):
+  var = False
+  while var == False:
+    addpiece = input("Do you want to add a piece? (y/n)")
+    if addpiece == 'y':
+      new_file = int(input("Enter new file: "))
+      new_rank = int(input("Enter new rank: "))
+      piece_name = input("Enter the name of the piece to add: ")
+      var = True
+      position = Board[new_rank][new_file]
+      DisplayBoard(Board)
+    else:
+      var = True
+  return addpiece, new_file, new_rank, piece_name, position
+  
+
+
                     
 def GetMove(StartSquare, FinishSquare):
   quitgame = input("Type 'q' to quit (Press enter to continue)")
   if quitgame == 'q':
     print("You have exited the game.")
     quit()
+  PlacePiece(Board)
   StartSquare = int(input("Enter coordinates of square containing piece to move (file first): "))
   FinishSquare = int(input("Enter coordinates of square to move piece to (file first): "))
   return StartSquare, FinishSquare
 
 #
+
+
 
 
 def MakeMove(Board, StartRank, StartFile, FinishRank, FinishFile, WhoseTurn):

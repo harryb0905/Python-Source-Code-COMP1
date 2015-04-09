@@ -7,7 +7,7 @@ This repository contains the 2015 Python Source Code for Capture The Sarrum
 
 1.3 Add more options to menu
 
-1.4 Give user option to randomly place pieces onto board
+1.4 Give user option to randomly place pieces onto board X (almost)
 
 1.5 Promote Marzaz pani to Kashshaptu when it reaches home rank
 
