@@ -199,7 +199,7 @@ def GetMove(StartSquare, FinishSquare):
     quit()
   StartSquare = int(input("Enter coordinates of square containing piece to move (file first): "))
   FinishSquare = int(input("Enter coordinates of square to move piece to (file first): "))
-  return quitgame, StartSquare, FinishSquare
+  return StartSquare, FinishSquare
 
 #
 
